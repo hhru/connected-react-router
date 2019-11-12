@@ -1,5 +1,5 @@
 {
-  "name": "connected-react-router",
+  "name": "@hh.ru/connected-react-router",
   "version": "6.5.2",
   "description": "A Redux binding for React Router v4 and v5",
   "main": "lib/index.js",
@@ -13,15 +13,12 @@
     "*.js",
     "*.ts",
     "esm",
-    "lib",
-    "umd"
+    "lib"
   ],
   "scripts": {
     "build:esm": "BABEL_ENV=esm babel src --out-dir esm",
     "build:commonjs": "BABEL_ENV=commonjs babel src --out-dir lib",
-    "build:umd": "NODE_ENV=development webpack src/index.js umd/ConnectedReactRouter.js",
-    "build:umd:min": "NODE_ENV=production webpack -p src/index.js umd/ConnectedReactRouter.min.js",
-    "build": "npm run build:esm & npm run build:commonjs & npm run build:umd & npm run build:umd:min",
+    "build": "yarn build:esm & yarn build:commonjs",
     "lint": "eslint .",
     "test": "jest --config ./.jestrc.json",
     "test:watch": "npm run test -- --watch",
